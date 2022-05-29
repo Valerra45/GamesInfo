@@ -31,6 +31,8 @@ namespace GamesInfo.Application.Services.Developers.Commands
         {
             var developer = _mapper.Map<Developer>(request.Request);
 
+            developer.Created = DateTime.Now;
+
             await _developerRepository.AddAsync(developer);
 
             return developer.Id;

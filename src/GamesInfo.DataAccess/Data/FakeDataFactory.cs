@@ -14,19 +14,22 @@ namespace GamesInfo.DataAccess.Data
             new Genre
             {
                 Id = Guid.Parse("AC854817-4EE3-4E87-89BD-FC7F2823EE3F"),
-                Name = "Action"
+                Name = "Action",
+                Created = DateTime.Now
             },
 
              new Genre
             {
                 Id = Guid.Parse("7822BD17-CDD2-4ECD-A083-DB8238109090"),
-                Name = "Adventure"
+                Name = "Adventure",
+                Created = DateTime.Now
             },
 
           new Genre
             {
                 Id = Guid.Parse("AC4B3E64-53ED-46AA-B3E3-16894B559781"),
-                Name = "MMO"
+                Name = "MMO",
+                Created = DateTime.Now
             }
         };
 
@@ -35,13 +38,15 @@ namespace GamesInfo.DataAccess.Data
             new Developer
             {
                 Id = Guid.Parse("CFB68A66-DACD-4751-AF53-AB72AA583B5E"),
-                Name = "Valve Corporation"
+                Name = "Valve Corporation",
+                Created = DateTime.Now
             },
 
              new Developer
             {
                 Id = Guid.Parse("6E123151-FBF4-4180-9FA8-F29F9D2FA33D"),
-                Name = "RockStar Games"
+                Name = "RockStar Games",
+                Created = DateTime.Now
             }
         };
 
@@ -62,7 +67,9 @@ namespace GamesInfo.DataAccess.Data
                 {
                     Genres.FirstOrDefault(x => x.Name == "Action"),
                     Genres.FirstOrDefault(x => x.Name == "MMO"),
-                }
+                },
+
+                Created = DateTime.Now
             };
 
             yield return new Game
@@ -77,7 +84,9 @@ namespace GamesInfo.DataAccess.Data
                 Genres = new List<Genre>
                 {
                     Genres.FirstOrDefault(x => x.Name == "Adventure"),
-                }
+                },
+
+                Created = DateTime.Now
             };
 #pragma warning restore CS8604 // Possible null reference argument.
         }

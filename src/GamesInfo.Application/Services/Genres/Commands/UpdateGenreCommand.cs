@@ -37,6 +37,7 @@ namespace GamesInfo.Application.Services.Genres.Commands
             }
 
             genre.Name = request.Request.Name;
+            genre.Update = DateTime.Now;
 
             await _genreRepository.UpdateAsync(genre);
 

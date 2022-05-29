@@ -31,6 +31,8 @@ namespace GamesInfo.Application.Services.Genres.Commands
         {
             var genre = _mapper.Map<Genre>(request.Request);
 
+            genre.Created = DateTime.Now;
+
             await _genreRepository.AddAsync(genre);
 
             return genre.Id;

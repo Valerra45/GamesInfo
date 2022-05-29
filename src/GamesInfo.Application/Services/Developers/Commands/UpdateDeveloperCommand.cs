@@ -36,6 +36,7 @@ namespace GamesInfo.Application.Services.Developers.Commands
             }
 
             developer.Name = request.Request.Name;
+            developer.Update = DateTime.Now;
 
             await _developerRepository.UpdateAsync(developer);
 
