@@ -14,6 +14,6 @@ namespace GamesInfo.Application.Services.Games
 
         public Guid DeveloperId { get; set; }
 
-        public List<Guid>? GenreIdx { get; set; }
+        public List<Guid>? GenreIds { get; set; }
     }
 }
