@@ -10,6 +10,8 @@ namespace GamesInfo.Application.Services.Games
 {
     public class GameResponse
     {
+        public Guid Id { get; set; }
+
         public string? Name { get; set; }
 
         public string? Description { get; set; }
