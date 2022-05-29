@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GamesInfo.Core.Domane
+namespace GamesInfo.Application.Services.Developers
 {
-    public class BaseEntity
+    public class DeveloperResponse
     {
         public Guid Id { get; set; }
+
+        public string? Name { get; set; }
     }
 }

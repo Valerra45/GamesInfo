@@ -1,5 +1,5 @@
 ﻿using GamesInfo.Core.Abstractions;
-using GamesInfo.Core.Domane;
+using GamesInfo.Core.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
 ﻿using GamesInfo.Core.Abstractions;
-using GamesInfo.Core.Domane;
+using GamesInfo.Core.Domain;
 using GamesInfo.Core.Exceptions;
 using MediatR;
 using System;

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using GamesInfo.Core.Abstractions;
-using GamesInfo.Core.Domane;
+using GamesInfo.Core.Domain;
 using GamesInfo.Core.Exceptions;
 using MediatR;
 using System;
@@ -9,14 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GamesInfo.Application.Services.Genres.Queryes
+namespace GamesInfo.Application.Services.Genres.Queries
 {
-    public class GetGenreByIdQuery : IRequest<GenreDto> 
+    public class GetGenreByIdQuery : IRequest<GenreResponse> 
     {
         public Guid Id { get; set; }
     }
 
-    public class GetGenreByIdQueryHandler : IRequestHandler<GetGenreByIdQuery, GenreDto>
+    public class GetGenreByIdQueryHandler : IRequestHandler<GetGenreByIdQuery, GenreResponse>
     {
         private readonly IMapper _mapper;
         private readonly IRepository<Genre> _genreRepository;
@@ -28,7 +28,7 @@ namespace GamesInfo.Application.Services.Genres.Queryes
             _genreRepository = genreRepository;
         }
 
-        public async Task<GenreDto> Handle(GetGenreByIdQuery request, CancellationToken cancellationToken)
+        public async Task<GenreResponse> Handle(GetGenreByIdQuery request, CancellationToken cancellationToken)
         {
             var response = await _genreRepository.GetByIdAsync(request.Id);
 
@@ -37,7 +37,7 @@ namespace GamesInfo.Application.Services.Genres.Queryes
                 throw new EntityNotFoundException($"{nameof(Genre)} with id '{request.Id}' doesn't exist");
             }
 
-            return _mapper.Map<GenreDto>(response);
+            return _mapper.Map<GenreResponse>(response);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GamesInfo.Core.Domane
+namespace GamesInfo.Core.Domain
 {
     public class Developer 
         : BaseEntity

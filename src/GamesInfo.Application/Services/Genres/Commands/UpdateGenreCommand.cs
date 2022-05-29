@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using GamesInfo.Core.Abstractions;
-using GamesInfo.Core.Domane;
+using GamesInfo.Core.Domain;
 using GamesInfo.Core.Exceptions;
 using MediatR;
 using System;
@@ -15,7 +15,7 @@ namespace GamesInfo.Application.Services.Genres.Commands
     {
         public Guid Id { get; set; }
 
-        public GenreDto? Request { get; set; }
+        public CreateOrEditGenreRequest? Request { get; set; }
     }
 
     public class UpdateGenreCommandHandler : IRequestHandler<UpdateGenreCommand, Guid>

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using GamesInfo.Application.Services.Developers;
 using GamesInfo.Application.Services.Genres;
-using GamesInfo.Core.Domane;
+using GamesInfo.Core.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,17 @@ namespace GamesInfo.Application.MapProfiles
     {
         public GamesInfoProfile()
         {
-            CreateMap<Genre, GenreDto>()
+            CreateMap<Genre, CreateOrEditGenreRequest>()
                 .ReverseMap();
+
+            CreateMap<Genre, GenreResponse>()
+              .ReverseMap();
+
+            CreateMap<Developer, DeveloperResponse>()
+                .ReverseMap();
+
+            CreateMap<Developer, CreateOrEditDeveloperRequest>()
+               .ReverseMap();
         }
     }
 }

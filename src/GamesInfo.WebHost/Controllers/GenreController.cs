@@ -1,6 +1,6 @@
 ﻿using GamesInfo.Application.Services.Genres;
 using GamesInfo.Application.Services.Genres.Commands;
-using GamesInfo.Application.Services.Genres.Queryes;
+using GamesInfo.Application.Services.Genres.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,7 +24,7 @@ namespace GamesInfo.WebHost.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GenreDto>>> GetGenresAsync()
+        public async Task<ActionResult<IEnumerable<GenreResponse>>> GetGenresAsync()
         {
             var response = await _mediatr.Send(new GetAllGenresQuery());
 
@@ -32,7 +32,7 @@ namespace GamesInfo.WebHost.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<GenreDto>> GetGenreAsync(Guid id)
+        public async Task<ActionResult<GenreResponse>> GetGenreAsync(Guid id)
         {
             var response = await _mediatr.Send(new GetGenreByIdQuery { Id = id });
 
@@ -40,7 +40,7 @@ namespace GamesInfo.WebHost.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateGenreAsync(GenreDto request)
+        public async Task<IActionResult> CreateGenreAsync(CreateOrEditGenreRequest request)
         {
             var response = await _mediatr.Send(new CreateGenreCommand { Request = request });
 
@@ -48,7 +48,7 @@ namespace GamesInfo.WebHost.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateGenreAsync(Guid id, GenreDto request)
+        public async Task<IActionResult> UpdateGenreAsync(Guid id, CreateOrEditGenreRequest request)
         {
             var response = await _mediatr.Send(new UpdateGenreCommand { Id = id, Request = request });
 

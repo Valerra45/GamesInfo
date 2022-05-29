@@ -1,4 +1,4 @@
-﻿using GamesInfo.Core.Domane;
+﻿using GamesInfo.Core.Domain;
 using System.Linq.Expressions;
 
 namespace GamesInfo.Core.Abstractions
