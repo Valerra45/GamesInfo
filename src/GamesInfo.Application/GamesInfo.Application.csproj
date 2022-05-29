@@ -15,8 +15,4 @@
 		<ProjectReference Include="..\GamesInfo.DataAccess\GamesInfo.DataAccess.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Services\Genres\Commands\" />
-	</ItemGroup>
-
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GamesInfo.Application.Services.Genres
 {
-    public class GenereDto
+    public class GenreDto
     {
         public string? Name { get; set; }
     }

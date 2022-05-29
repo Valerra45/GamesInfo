@@ -10,25 +10,25 @@ using System.Threading.Tasks;
 
 namespace GamesInfo.Application.Services.Genres.Queryes
 {
-    public class GetAllGeneresQuery : IRequest<IEnumerable<GenereDto>> { }
+    public class GetAllGenresQuery : IRequest<IEnumerable<GenreDto>> { }
 
-    public class GetAllGeneresQueryHandler : IRequestHandler<GetAllGeneresQuery, IEnumerable<GenereDto>>
+    public class GetAllGenresQueryHandler : IRequestHandler<GetAllGenresQuery, IEnumerable<GenreDto>>
     {
         private readonly IMapper _mapper;
-        private readonly IRepository<Genre> _genereRepository;
+        private readonly IRepository<Genre> _genreRepository;
 
-        public GetAllGeneresQueryHandler(IMapper mapper,
-            IRepository<Genre> genereRepository)
+        public GetAllGenresQueryHandler(IMapper mapper,
+            IRepository<Genre> genreRepository)
         {
             _mapper = mapper;
-            _genereRepository = genereRepository;
+            _genreRepository = genreRepository;
         }
 
-        public async Task<IEnumerable<GenereDto>> Handle(GetAllGeneresQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<GenreDto>> Handle(GetAllGenresQuery request, CancellationToken cancellationToken)
         {
-            var generes = await _genereRepository.GetAllAsync();
+            var response = await _genreRepository.GetAllAsync();
 
-            return _mapper.Map<IEnumerable<GenereDto>>(generes);
+            return _mapper.Map<IEnumerable<GenreDto>>(response);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace GamesInfo.Application.MapProfiles
     {
         public GamesInfoProfile()
         {
-            CreateMap<Genre, GenereDto>()
+            CreateMap<Genre, GenreDto>()
                 .ReverseMap();
         }
     }

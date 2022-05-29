@@ -25,7 +25,7 @@ builder.Services.AddDbContext<GamesInfoDbContext>(options =>
     options.UseLazyLoadingProxies();
 });
 
-builder.Services.AddMediatR(typeof(GetAllGeneresQuery).Assembly);
+builder.Services.AddMediatR(typeof(GetAllGenresQuery).Assembly);
 
 builder.Services.AddAutoMapper(typeof(GamesInfoProfile).Assembly);
 
@@ -45,7 +45,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapDefaultControllerRoute();
 
 app.Run();
 
