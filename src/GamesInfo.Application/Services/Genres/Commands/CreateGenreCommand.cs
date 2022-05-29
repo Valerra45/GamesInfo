@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using GamesInfo.Core.Abstractions;
-using GamesInfo.Core.Domane;
+using GamesInfo.Core.Domain;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace GamesInfo.Application.Services.Genres.Commands
 {
     public class CreateGenreCommand : IRequest<Guid>
     {
-        public GenreDto? Request { get; set; }
+        public CreateOrEditGenreRequest? Request { get; set; }
     }
 
     public class CreateGenreCommandHandler : IRequestHandler<CreateGenreCommand, Guid>
@@ -30,6 +30,8 @@ namespace GamesInfo.Application.Services.Genres.Commands
         public async Task<Guid> Handle(CreateGenreCommand request, CancellationToken cancellationToken)
         {
             var genre = _mapper.Map<Genre>(request.Request);
+
+            genre.Created = DateTime.Now;
 
             await _genreRepository.AddAsync(genre);
 

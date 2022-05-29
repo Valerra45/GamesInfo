@@ -1,5 +1,5 @@
 ﻿using GamesInfo.Core.Abstractions;
-using GamesInfo.Core.Domane;
+using GamesInfo.Core.Domain;
 using GamesInfo.Core.Exceptions;
 using MediatR;
 using System;
@@ -32,7 +32,7 @@ namespace GamesInfo.Application.Services.Genres.Commands
             {
                 throw new EntityNotFoundException($"{nameof(Genre)} with id '{request.Id}' doesn't exist");
             }
-
+          
             await _genreRepository.DeleteAsync(genre);
 
             return Unit.Value;

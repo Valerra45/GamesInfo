@@ -1,5 +1,5 @@
 using GamesInfo.Application.MapProfiles;
-using GamesInfo.Application.Services.Genres.Queryes;
+using GamesInfo.Application.Services.Genres.Queries;
 using GamesInfo.Core.Abstractions;
 using GamesInfo.DataAccess;
 using GamesInfo.DataAccess.Data;

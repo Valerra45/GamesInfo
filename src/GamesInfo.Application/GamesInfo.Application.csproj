@@ -15,4 +15,9 @@
 		<ProjectReference Include="..\GamesInfo.DataAccess\GamesInfo.DataAccess.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Services\Games\Commands\" />
+	  <Folder Include="Services\Games\Queries\" />
+	</ItemGroup>
+
 </Project>
