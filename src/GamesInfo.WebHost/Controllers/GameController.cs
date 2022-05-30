@@ -3,11 +3,6 @@ using GamesInfo.Application.Services.Games.Commands;
 using GamesInfo.Application.Services.Games.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GamesInfo.WebHost.Controllers
 {
@@ -39,8 +34,8 @@ namespace GamesInfo.WebHost.Controllers
             return Ok(response);
         }
 
-        [HttpGet("ByGenre")]
-        public async Task<ActionResult<GameResponse>> GetGameByGenreAsync([FromQuery]GameGenreRequest byGenre)
+        [HttpGet("genre")]
+        public async Task<ActionResult<GameResponse>> GetGameByGenreAsync([FromQuery] GameGenreRequest byGenre)
         {
             var response = await _mediatr.Send(new GetGamesByGenre { Request = byGenre });
 

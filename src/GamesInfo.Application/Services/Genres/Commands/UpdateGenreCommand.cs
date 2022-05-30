@@ -1,13 +1,7 @@
-﻿using AutoMapper;
-using GamesInfo.Core.Abstractions;
+﻿using GamesInfo.Core.Abstractions;
 using GamesInfo.Core.Domain;
 using GamesInfo.Core.Exceptions;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GamesInfo.Application.Services.Genres.Commands
 {

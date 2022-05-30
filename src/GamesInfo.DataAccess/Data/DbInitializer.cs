@@ -18,7 +18,7 @@ namespace GamesInfo.DataAccess.Data
             if (_context.Database.EnsureCreated())
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-               
+
                 _context.Games.AddRange(FakeDataFactory.Games());
                 _context.SaveChanges();
 

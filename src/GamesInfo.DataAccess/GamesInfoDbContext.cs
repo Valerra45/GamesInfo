@@ -1,18 +1,13 @@
 ﻿using GamesInfo.Core.Domain;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GamesInfo.DataAccess
 {
-    public class GamesInfoDbContext 
+    public class GamesInfoDbContext
         : DbContext
     {
         public GamesInfoDbContext(DbContextOptions<GamesInfoDbContext> options)
-            :base(options)
+            : base(options)
         {
 
         }
