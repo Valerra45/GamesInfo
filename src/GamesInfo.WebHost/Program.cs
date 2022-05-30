@@ -1,9 +1,12 @@
+using FluentValidation;
 using GamesInfo.Application.MapProfiles;
+using GamesInfo.Application.Services.Behaviors;
 using GamesInfo.Application.Services.Genres.Queries;
 using GamesInfo.Core.Abstractions;
 using GamesInfo.DataAccess;
 using GamesInfo.DataAccess.Data;
 using GamesInfo.DataAccess.Repositories;
+using GamesInfo.WebHost.Middlewares;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +31,10 @@ builder.Services.AddDbContext<GamesInfoDbContext>(options =>
 builder.Services.AddMediatR(typeof(GetAllGenresQuery).Assembly);
 
 builder.Services.AddAutoMapper(typeof(GamesInfoProfile).Assembly);
+
+builder.Services.AddTransient<ExceptionHandlerMiddleware>();
+builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(PipelineWithValidationCommandBehavior<,>));
+builder.Services.AddValidatorsFromAssembly(typeof(GetAllGenresQuery).Assembly);
 
 var app = builder.Build();
 
